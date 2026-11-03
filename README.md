@@ -53,39 +53,35 @@ The simulation uses simplified second-order models for pitch and roll dynamics.
 
 **Pitch dynamics:**
 
-\[
-\ddot{\theta}+2\zeta_\theta\omega_{n_\theta}\dot{\theta}
-+\omega_{n_\theta}^{2}\theta
-=k_\theta u_e
-\]
+$$
+\ddot{\theta} + 2\zeta_\theta \omega_{n_\theta} \dot{\theta} + \omega_{n_\theta}^{2} \theta = k_\theta u_e
+$$
 
 **Roll dynamics:**
 
-\[
-\ddot{\phi}+2\zeta_\phi\omega_{n_\phi}\dot{\phi}
-+\omega_{n_\phi}^{2}\phi
-=k_\phi u_a
-\]
+$$
+\ddot{\phi} + 2\zeta_\phi \omega_{n_\phi} \dot{\phi} + \omega_{n_\phi}^{2} \phi = k_\phi u_a
+$$
 
 Where:
 
-- \(\theta\): Pitch angle
-- \(\phi\): Roll angle
-- \(\zeta\): Damping ratio
-- \(\omega_n\): Natural frequency
-- \(u_e\): Elevator command
-- \(u_a\): Aileron command
-- \(k_\theta, k_\phi\): Control input gains
+- $\theta$: Pitch angle
+- $\phi$: Roll angle
+- $\zeta$: Damping ratio
+- $\omega_n$: Natural frequency
+- $u_e$: Elevator command
+- $u_a$: Aileron command
+- $k_\theta, k_\phi$: Control input gains
 
 The altitude and heading updates use simplified kinematic approximations:
 
-\[
-\dot{h}\approx V\theta
-\]
+$$
+\dot{h} \approx V \theta
+$$
 
-\[
-\dot{\psi}\approx k_\psi\phi
-\]
+$$
+\dot{\psi} \approx k_\psi \phi
+$$
 
 The differential equations are numerically integrated using the forward Euler method.
 
@@ -100,7 +96,7 @@ Four PID controllers are implemented in a nested-loop configuration.
 | Heading PID | Generates the desired roll reference |
 | Roll PID | Regulates roll through aileron input |
 
-Each controller incorporates proportional, integral, and derivative actions. Users can independently modify the \(K_p\), \(K_i\), and \(K_d\) gains of all four controllers through the graphical interface.
+Each controller incorporates proportional, integral, and derivative actions. Users can independently modify the $K_p$, $K_i$, and $K_d$ gains of all four controllers through the graphical interface.
 
 ## 6. Interactive Features
 
@@ -117,9 +113,9 @@ The application displays three main response plots:
 
 1. **Altitude Response:** Comparison between the desired altitude reference and actual simulated altitude.
 2. **Heading Response:** Comparison between the desired heading reference and actual simulated heading.
-3. **Pitch, Roll, and Actuator Response:** Visualization of pitch angle, roll angle, elevator command, and aileron command.
+3. **Pitch, Roll, and Actuator Response:** Visualization of pitch angle, roll angle, elevator command and aileron command.
 
-These plots help illustrate controller behavior, system dynamics, and the response to external disturbances.
+These plots help illustrate controller behavior, system dynamics and the response to external disturbances.
 
 ## 8. Technologies Used
 
@@ -144,7 +140,7 @@ These plots help illustrate controller behavior, system dynamics, and the respon
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/interactive-aircraft-control-system-visualizer.git
+git clone https://github.com/mashrursaademad/interactive-aircraft-control-system-visualizer.git
 ```
 
 Navigate to the project directory:
@@ -171,23 +167,37 @@ python src/aircraft_control_visualizer.py
 interactive-aircraft-control-system-visualizer/
 │
 ├── README.md
+├── requirements.txt
+├── .gitignore
+│
 ├── src/
 │   └── aircraft_control_visualizer.py
+│
 ├── documentation/
 │   └── EEE4606_Project_Report.pdf
-├── results/
-│   └── figures/
-├── requirements.txt
-└── .gitignore
+│
+└── results/
+    └── figures/
+        ├── interface.png
+        ├── altitude_response.png
+        ├── heading_response.png
+        └── pitch_roll_actuator_response.png
 ```
 
-## 11. Model Scope and Limitations
+## 11. Documentation
+
+For detailed mathematical derivations, laboratory findings, and controller design analysis, refer to the complete academic report:
+- 📄 [EEE4606 Project Report (PDF)](documentation/EEE4606_Project_Report.pdf)
+
+## 12. Model Scope and Limitations
 
 This project uses simplified aircraft dynamics to demonstrate fundamental feedback control concepts. The pitch and roll axes are represented using second-order models, while altitude and heading are calculated through simplified kinematic relationships.
 
 The simulation is intended for educational and control-system visualization purposes. It is not a high-fidelity aircraft flight-dynamics model or a flight-certified autopilot implementation.
 
-## 12. Contributors
+## 13. Contributors and Repository Maintainer
+
+### 13.1 Contributors
 
 Developed as a group academic project for:
 
@@ -204,9 +214,10 @@ Developed as a group academic project for:
 - Fahimun Nabi Torongo
 - Khandakar Siaum Masud
 
-## 13. Author
+### 13.2 Repository Maintainer
 
 **Mashrur Saad Emad**  
 Electrical and Electronic Engineering Graduate  
 Islamic University of Technology (IUT)
-
+[GitHub Profile](https://github.com/mashrursaademad)
+[LinkedIn Profile](https://www.linkedin.com/in/mashrur-saad-emad-787995436/)
