@@ -220,5 +220,5 @@ Developed as a group academic project for:
 Electrical and Electronic Engineering Graduate  
 Islamic University of Technology (IUT)
 
-[GitHub Profile](https://github.com/mashrursaademad)
+[GitHub Profile](https://github.com/mashrursaademad)  
 [LinkedIn Profile](https://www.linkedin.com/in/mashrur-saad-emad-787995436/)
